@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("hello gohub!i run in mac")
+	fmt.Println("hello gohub!我来了！")
 }
