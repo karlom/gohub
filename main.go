@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"gohub/bootstrap"
-	btsConig "gohub/config"
+	btsConfig "gohub/config"
 	"gohub/pkg/config"
 
 	"github.com/gin-gonic/gin"
@@ -12,7 +12,7 @@ import (
 
 func init() {
 	// 加载 config 目录下的配置信息
-	btsConig.Initialize()
+	btsConfig.Initialize()
 }
 
 func main() {
