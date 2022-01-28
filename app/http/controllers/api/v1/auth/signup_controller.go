@@ -18,6 +18,8 @@ type SignupController struct {
 // IsPhoneExist 检测手机号是否被注册
 func (sc *SignupController) IsPhoneExist(c *gin.Context) {
 
+	// panic("这是 panic 测试")
+
 	// 初始化请求对象
 	request := requests.SignupPhoneExistRequest{}
 
