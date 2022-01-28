@@ -19,6 +19,14 @@ func RegisterAPIRoute(r *gin.Engine) {
 			authGroup.POST("/signup/email/exist", suc.IsEmailExist)
 		}
 
+		lotteryGroup := v1.Group("/lottery")
+		{
+			suc := new(auth.SignupController)
+			// 抽奖
+			lotteryGroup.POST("/lottery", suc.Lottery)
+
+		}
+
 		v1.GET("/", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
 				"Hello": "world at v1",
