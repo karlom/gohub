@@ -30,13 +30,11 @@ func ConnectRedis(address string, username string, password string, db int) {
 }
 
 // NewClient 创建一个新的 redis 连接
-func NewClient(address string, password string, username string, db int) *RedisClient {
-
+func NewClient(address string, username string, password string, db int) *RedisClient {
 	// 初始化自定的 RedisClient 实例
 	rds := &RedisClient{}
 	// 使用默认的 context
 	rds.Context = context.Background()
-
 	// 使用 redis 库里的 NewClient 初始化连接
 	rds.Client = redis.NewClient(&redis.Options{
 		Addr:     address,
