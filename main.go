@@ -31,6 +31,8 @@ func main() {
 	gin.SetMode(gin.ReleaseMode)
 
 	bootstrap.SetupDB()
+	//初始化redis
+	bootstrap.SetupRedis()
 	router := gin.New()
 	bootstrap.SetupRoute(router)
 
