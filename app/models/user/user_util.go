@@ -54,3 +54,19 @@ func IsLottery() int {
 
 	return lotteryNum
 }
+
+// GetByPhone 通过手机号来获取用户
+func GetByPhone(phone string) (userModel User) {
+	database.DB.Where("phone = ?", phone).First(&userModel)
+	return
+}
+
+// GetByMulti 通过 手机号/Email/用户名 来获取用户
+func GetByMulti(loginID string) (userModel User) {
+	database.DB.
+		Where("phone = ?", loginID).
+		Or("email = ?", loginID).
+		Or("name = ?", loginID).
+		First(&userModel)
+	return
+}
