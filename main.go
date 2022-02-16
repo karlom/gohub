@@ -41,6 +41,9 @@ func main() {
 	// 	response.Data(c, userModel)
 	// })
 
+	// router.GET("/test_guest", middlewares.GuestJWT(), func(c *gin.Context) {
+	// 	c.String(http.StatusOK, "Hello guest")
+	// })
 	err := router.Run(":" + config.Get("app.port"))
 
 	if err != nil {
