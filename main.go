@@ -36,6 +36,11 @@ func main() {
 	router := gin.New()
 	bootstrap.SetupRoute(router)
 
+	// router.GET("/test_auth", middlewares.AuthJWT(), func(c *gin.Context) {
+	// 	userModel := auth.CurrentUser(c)
+	// 	response.Data(c, userModel)
+	// })
+
 	err := router.Run(":" + config.Get("app.port"))
 
 	if err != nil {
