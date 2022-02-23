@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"gohub/app/cmd"
+	"gohub/app/cmd/make"
 	"gohub/bootstrap"
 	btsConfig "gohub/config"
 	"gohub/pkg/config"
@@ -59,6 +60,7 @@ func main() {
 		cmd.CmdServe,
 		cmd.CmdKey,
 		cmd.CmdPlay,
+		make.CmdMake,
 	)
 	// 执行主命令
 	if err := rootCmd.Execute(); err != nil {
