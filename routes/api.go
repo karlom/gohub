@@ -33,6 +33,9 @@ func RegisterAPIRoute(r *gin.Engine) {
 			// 支持手机号，Email 和 用户名
 			authGroup.POST("/login/using-password", lgc.LoginByPassword)
 			authGroup.POST("/login/refresh-token", lgc.RefreshToken)
+
+			pwc := new(auth.PasswordController)
+			authGroup.POST("/password-reset/using-phone", pwc.ResetByPhone)
 		}
 
 		lotteryGroup := v1.Group("/lottery")
