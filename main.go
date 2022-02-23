@@ -55,6 +55,10 @@ func main() {
 	// 注册全局参数，--env
 	cmd.RegisterGlobalFlags(rootCmd)
 
+	rootCmd.AddCommand(
+		cmd.CmdServe,
+		cmd.CmdKey,
+	)
 	// 执行主命令
 	if err := rootCmd.Execute(); err != nil {
 		console.Exit(fmt.Sprintf("Failed to run app with %v: %s", os.Args, err.Error()))
