@@ -58,6 +58,7 @@ func main() {
 	rootCmd.AddCommand(
 		cmd.CmdServe,
 		cmd.CmdKey,
+		cmd.CmdPlay,
 	)
 	// 执行主命令
 	if err := rootCmd.Execute(); err != nil {
