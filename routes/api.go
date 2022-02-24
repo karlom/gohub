@@ -1,6 +1,7 @@
 package routes
 
 import (
+	controllers "gohub/app/http/controllers/api/v1"
 	"gohub/app/http/controllers/api/v1/auth"
 	"gohub/app/http/middlewares"
 	"net/http"
@@ -51,6 +52,11 @@ func RegisterAPIRoute(r *gin.Engine) {
 			lotteryGroup.POST("/lottery", suc.Lottery)
 
 		}
+
+		uc := new(controllers.UsersController)
+
+		// 获取当前用户
+		v1.GET("/user", middlewares.AuthJWT(), uc.CurrentUser)
 
 		v1.GET("/", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{
